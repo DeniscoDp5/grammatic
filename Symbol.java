@@ -1,14 +1,19 @@
-public class Symbol{
-    String simbol;
+public interface Symbol<E>{
 
-    public Symbol(String simbol){
-        this.simbol = simbol;
-    }
-    public boolean isNonTerminal(){
-        throw new UnsupportedOperationException();
-    };
+    /**
+     * Tells if this simbol is nonterminal
+     * @return true if is non terminal false otherwise 
+     */
+    public boolean isNonTerminal();
 
-    public boolean isTerminal(){
-        throw new UnsupportedOperationException();
-    };
+    /**
+     * Tells if this simbol is terminal
+     * @return true if is terminal false otherwise
+     */
+    public boolean isTerminal();
+
+    /**
+     * Returns the value of the simbol
+     */
+    public E getSymbol();
 }

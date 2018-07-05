@@ -1,7 +1,9 @@
-public class Terminal extends Symbol{
+public class Terminal implements Symbol<String>{
     
+    String simbol;
+
     public Terminal(String simbol){
-        super(simbol);
+        this.simbol = simbol;
     }
 
     public boolean isTerminal(){
@@ -9,5 +11,8 @@ public class Terminal extends Symbol{
     }
     public boolean isNonTerminal(){
         return false;
+    }
+    public String getSymbol(){
+        return this.simbol;
     }
 }

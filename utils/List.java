@@ -52,7 +52,9 @@ public class List<T> implements Iterable<T>{
             }
             @Override
             public T next(){
-
+                if(this.currentNode == null){
+                    return null;
+                }
                 T value = this.getCurrentNode().getValue();
                 this.currentNode = this.getCurrentNode().getNext();
 
