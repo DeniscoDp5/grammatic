@@ -16,4 +16,11 @@ public interface Symbol<E>{
      * Returns the value of the simbol
      */
     public E getSymbol();
+
+    /**
+     * Tells if 2 simbols are equals. They are quals if have the same value associated
+     * @param s the simbol to compare
+     * @return true if s is equal to this. 
+     */
+    public boolean equals(Object s);
 }

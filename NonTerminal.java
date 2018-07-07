@@ -16,4 +16,17 @@ public class NonTerminal implements Symbol<String>{
     public boolean isNonTerminal(){
         return true;
     }
+    public boolean equals(Object s){
+        if(s == null) return false;
+        if(s == this) return true;
+        if(!(s instanceof NonTerminal)) return false;
+
+        NonTerminal n = (NonTerminal) s;
+
+        if(n.getSymbol().equals(this.getSymbol())){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

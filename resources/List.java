@@ -27,6 +27,33 @@ public class List<T> implements Iterable<T>{
         return this.size;
     }
 
+    /**
+     * This method tells if an object is inserted in the the list
+     * @param obj the object to search in the list
+     * @return true if obj is in false otherwise
+     */
+    public boolean isIn(T obj){
+        Iterator<T> it = this.iterator();
+
+        if(it == null){
+            return false;
+        }
+        T x = it.next();
+
+        while(x != null && !x.equals(obj)){
+            x=it.next();
+        }
+        if(x == null){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    /**
+     * This metod merge 2 list. the head is the head of the first list and the tail is the tail of the second
+     * this.tail.next() = list2.head
+     * @param list2 the list to add ad the tail of this 
+     */
     public void merge(List<T> list2){
         int size2 = list2.getSize();
         this.tail.setNext(list2.head);
@@ -37,7 +64,7 @@ public class List<T> implements Iterable<T>{
 
     
     @Override
-    public Iterator<T> iterator(){
+    public Iterator<T> iterator(){  //TODO: Improve this implementation
         Node<T> l = this.head;
         Iterator<T> it = new Iterator<T>(){
             Node<T> currentNode = l;

@@ -26,9 +26,11 @@ public class MapGrammar<K,V>{
         MapNode<K,V> tmp = new MapNode<K,V>(key,value);
 
         Iterator<MapNode<K,V>> it =  this.map.iterator();
-        if(it == null){
-            System.out.println("null");
-        }
+
+        // if(it == null){
+        //     System.out.println("null");
+        // }
+
         MapNode<K,V> x = it.next();
         boolean bool = true;
         
@@ -46,45 +48,28 @@ public class MapGrammar<K,V>{
             this.map.add(tmp);
         }
     }
-    // public MapNode<T,E> add(T key, E value){
-    //     MapNode<T,E> x = new MapNode<T,E>(key,value);
-    //     this.map.add(x);
-    //     return x;
-    // }
+    /**
+     * This method returns the value associated with the key
+     * Returns null if the key is not in the keys set
+     * @param key the key to look for
+     * @return The value associate with the key if present, null otherwise
+     */
+    public V getValue(K key){
 
-    // public E getObj(T obj){
-    //     MapNode<T,E> x = this.find(obj);
-    //     return x.getObj2();
-    // }
+        Iterator<MapNode<K,V>> it =  this.map.iterator();
+        if (it == null){
+            return null;
+        }
+        MapNode<K,V> x = it.next();
+        while(x != null && !x.getKey().equals(key)){
+            x = it.next();
+        }
 
-    // /* public T getObj(E obj){
-    //     MapNode<T,E> x = this.find(obj);
-    //     return (T)x.getObj1();
-    // } */
+        if(x == null){
+            return null;
+        }else{
+            return x.getValue();
+        }
+    }
 
-    // private MapNode<T,E> find(T obj){
-    //     Iterator<MapNode> it = this.map.iterator();
-    //     MapNode<T,E> x = it.next();
-
-    //     while(x != null){
-    //         if(x.getObj1().equals(obj)){
-    //             return x;
-    //         }
-    //         x = it.next();
-    //     }
-    //     throw new UnsupportedOperationException();
-    // }
-
-    // /* private MapNode<T,E> find(E obj){
-    //     Iterator<MapNode> it = this.map.iterator();
-    //     MapNode<T,E> x = it.next();
-
-    //     while(x != null){
-    //         if(x.getObj2().equals(obj)){
-    //             return x;
-    //         }
-    //         x = it.next();
-    //     }
-    //     throw new UnsupportedOperationException();
-    // } */
 }

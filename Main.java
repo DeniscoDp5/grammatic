@@ -7,5 +7,8 @@ public class Main{
         
         MapGrammar<Integer,String> map = new MapGrammar<Integer,String>();
         map.add(new Integer(1),"Uno");
+        map.add(new Integer(2),"Due");
+
+        String l =map.getValue(new Integer(2));
     }
 }
