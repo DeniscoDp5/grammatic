@@ -23,5 +23,6 @@ public class Main{
         l.addRule(a,a)
 
         System.out.println(l.toString());
+        //todo
     }
 }
