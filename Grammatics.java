@@ -1,3 +1,4 @@
+import exception.GrammaException;
 /**
  * This ADT implements the Grammatics as know in math
  * A grammatic is a set of Non terminals Simbols, Terminal Simbols, rules associated with non terminal simbols
@@ -19,14 +20,14 @@ public interface Grammatics<Nt,T>{
      * This method adds a NonTerminal simbol to the set of non terminal simbols
      * @param nonTermSimb The non terminal simbol to add to the set
      */
-    public void addNonTerminal(Nt nonTermSimb);
+    public void addNonTerminal(Nt nonTermSimb) throws GrammaException;
 
 
     /**
      * This method adds a Terminal simbol to the set of terminal simbols of the grammar
      * @param termSimbol the terminal simbol to add
      */
-    public void addTerminal(T termSimbol);
+    public void addTerminal(T termSimbol) throws GrammaException;
 
     /**
      * This method adds a derivation rule to the simbols s
@@ -36,5 +37,5 @@ public interface Grammatics<Nt,T>{
      * @param s the simbol on wich add the rule
      * @param simb the rule added to s
      */
-    public void addRule(Nt s, Symbol simb);
+    public void addRule(Nt s, Symbol simb) throws GrammaException;
 }

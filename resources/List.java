@@ -13,6 +13,20 @@ public class List<T> implements Iterable<T>{
         this.size = 0;
     }
 
+    public T getHead(){
+        if (this.head != null){
+            return this.head.getValue();
+        }else{
+            return null;
+        }
+    }
+    public T getTail(){
+        if (this.tail != null){
+            return this.tail.getValue();
+        }else{
+            return null;
+        }
+    }
     public void add(T value){
         if(this.head == null){
             this.head = new Node<T>(value);
@@ -62,7 +76,6 @@ public class List<T> implements Iterable<T>{
         this.size = this.size + size2;
     }
 
-    
     @Override
     public Iterator<T> iterator(){  //TODO: Improve this implementation
         Node<T> l = this.head;

@@ -22,19 +22,14 @@ public class MapGrammar<K,V>{
      * @param value the vlue to associate with the key
      * @throws Exception if the key is already in relation with another key
      */
-    public void add(K key, V value) throws UnsupportedOperationException{
+    public void add(K key, V value) throws UnsupportedOperationException{ //TODO use the new isIn method of List
         MapNode<K,V> tmp = new MapNode<K,V>(key,value);
 
         Iterator<MapNode<K,V>> it =  this.map.iterator();
 
-        // if(it == null){
-        //     System.out.println("null");
-        // }
-
         MapNode<K,V> x = it.next();
         boolean bool = true;
         
-        System.out.println(x);
         while(x != null && bool){
             if(x.equals(tmp)){
                 bool = false;
